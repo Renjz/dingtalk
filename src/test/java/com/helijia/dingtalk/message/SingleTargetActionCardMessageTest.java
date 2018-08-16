@@ -2,7 +2,7 @@ package com.helijia.dingtalk.message;
 
 import com.helijia.dingtalk.DingtalkChatbotClient;
 import com.helijia.dingtalk.SendResult;
-import com.helijia.dingtalk.TestConfig;
+import com.helijia.dingtalk.HookConfig;
 import org.junit.Test;
 
 /**
@@ -22,7 +22,7 @@ public class SingleTargetActionCardMessageTest {
         message.setSingleTitle("查看更多");
         message.setSingleURL("http://www.dingtalk.com");
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -35,7 +35,7 @@ public class SingleTargetActionCardMessageTest {
         message.setSingleTitle("查看更多");
         message.setSingleURL("http://www.dingtalk.com");
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -49,7 +49,7 @@ public class SingleTargetActionCardMessageTest {
         message.setSingleTitle("查看更多");
         message.setSingleURL("http://www.dingtalk.com");
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 }

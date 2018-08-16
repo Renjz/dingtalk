@@ -2,7 +2,7 @@ package com.helijia.dingtalk.message;
 
 import com.helijia.dingtalk.DingtalkChatbotClient;
 import com.helijia.dingtalk.SendResult;
-import com.helijia.dingtalk.TestConfig;
+import com.helijia.dingtalk.HookConfig;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class FeedCardMessageTest {
 
         System.out.println(message.toJsonString());
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 }

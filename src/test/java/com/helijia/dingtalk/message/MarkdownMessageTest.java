@@ -2,7 +2,7 @@ package com.helijia.dingtalk.message;
 
 import com.helijia.dingtalk.DingtalkChatbotClient;
 import com.helijia.dingtalk.SendResult;
-import com.helijia.dingtalk.TestConfig;
+import com.helijia.dingtalk.HookConfig;
 import org.junit.Test;
 
 import java.net.URLEncoder;
@@ -55,7 +55,7 @@ public class MarkdownMessageTest {
         message.add(MarkdownMessage.getLinkText("This is a link", "dtmd://dingtalkclient/sendMessage?content=linkmessage"));
         message.add(MarkdownMessage.getLinkText("中文跳转", "dtmd://dingtalkclient/sendMessage?content=" + URLEncoder.encode("链接消息", "UTF-8")));
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 }

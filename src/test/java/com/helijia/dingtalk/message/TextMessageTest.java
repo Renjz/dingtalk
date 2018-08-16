@@ -2,7 +2,7 @@ package com.helijia.dingtalk.message;
 
 import com.helijia.dingtalk.DingtalkChatbotClient;
 import com.helijia.dingtalk.SendResult;
-import com.helijia.dingtalk.TestConfig;
+import com.helijia.dingtalk.HookConfig;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class TextMessageTest {
     @Test
     public void testSendTextMessage() throws Exception {
         TextMessage message = new TextMessage("我就是我, 是不一样的烟火");
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -28,7 +28,7 @@ public class TextMessageTest {
         atMobiles.add("137xxxx3310");
         message.setAtMobiles(atMobiles);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -37,7 +37,7 @@ public class TextMessageTest {
         TextMessage message = new TextMessage("我就是我, 是不一样的烟火");
         message.setIsAtAll(true);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -49,7 +49,7 @@ public class TextMessageTest {
         message.setAtMobiles(atMobiles);
         message.setIsAtAll(true);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 }

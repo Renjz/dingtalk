@@ -2,7 +2,7 @@ package com.helijia.dingtalk.message;
 
 import com.helijia.dingtalk.DingtalkChatbotClient;
 import com.helijia.dingtalk.SendResult;
-import com.helijia.dingtalk.TestConfig;
+import com.helijia.dingtalk.HookConfig;
 import org.junit.Test;
 
 import java.net.URLEncoder;
@@ -27,7 +27,7 @@ public class ActionCardMessageTest {
         ActionCardAction action4 = new ActionCardAction("更多问题", "http://www.dingtalk.com");
         message.addAction(action4);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -41,7 +41,7 @@ public class ActionCardMessageTest {
         ActionCardAction action1 = new ActionCardAction("邀请群成员创建团队", "http://www.dingtalk.com");
         message.addAction(action1);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -58,7 +58,7 @@ public class ActionCardMessageTest {
         ActionCardAction action2 = new ActionCardAction("不感兴趣", "http://www.dingtalk.com");
         message.addAction(action2);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -75,7 +75,7 @@ public class ActionCardMessageTest {
         message.addAction(action2);
         message.setActionButtonStyle(ActionButtonStyle.HORIZONTAL);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 
@@ -94,7 +94,7 @@ public class ActionCardMessageTest {
         message.setActionButtonStyle(ActionButtonStyle.HORIZONTAL);
         message.setHideAvatar(true);
 
-        SendResult result = client.send(TestConfig.CHATBOT_WEBHOOK, message);
+        SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
     }
 }
