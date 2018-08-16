@@ -16,6 +16,10 @@ public class MarkdownMessage implements Message {
 
     private List<String> items = new ArrayList<String>();
 
+    private String[] atMobiles;
+
+    private boolean isAtAll;
+
     public String getTitle() {
         return title;
     }
@@ -26,6 +30,14 @@ public class MarkdownMessage implements Message {
 
     public void add(String text) {
         items.add(text);
+    }
+
+    public void at(String... mobiles) {
+        atMobiles = mobiles;
+    }
+
+    public void atAll(boolean isAtAll) {
+        this.isAtAll = isAtAll;
     }
 
     public static String getBoldText(String text) {
@@ -98,7 +110,17 @@ public class MarkdownMessage implements Message {
             markdownText.append(item + "\n");
         }
         markdown.put("text", markdownText.toString());
+
+        Map<String, Object> at = new HashMap<String, Object>();
+        if (!isAtAll && atMobiles != null && atMobiles.length > 0) {
+            at.put("atMobiles", atMobiles);
+        }
+        at.put("isAtAll", isAtAll);
+
+        result.put("at", at);
         result.put("markdown", markdown);
+
+        System.out.println(JSON.toJSONString(result));
 
         return JSON.toJSONString(result);
     }

@@ -30,6 +30,7 @@ public class MarkdownMessageTest {
         message.add(MarkdownMessage.getReferenceText("reference text"));
         message.add("\n\n");
 
+        message.add("@所有人");
         message.add("normal text");
         message.add("\n\n");
 
@@ -54,6 +55,8 @@ public class MarkdownMessageTest {
         message.add(MarkdownMessage.getImageText("http://img01.taobaocdn.com/top/i1/LB1GCdYQXXXXXXtaFXXXXXXXXXX"));
         message.add(MarkdownMessage.getLinkText("This is a link", "dtmd://dingtalkclient/sendMessage?content=linkmessage"));
         message.add(MarkdownMessage.getLinkText("中文跳转", "dtmd://dingtalkclient/sendMessage?content=" + URLEncoder.encode("链接消息", "UTF-8")));
+
+        message.atAll(true);
 
         SendResult result = client.send(HookConfig.CHATBOT_WEBHOOK, message);
         System.out.println(result);
