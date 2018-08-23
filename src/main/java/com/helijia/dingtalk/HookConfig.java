@@ -1,6 +1,9 @@
 package com.helijia.dingtalk;
 
 /**
+ * <p>钉钉开放平台
+ *     https://open-doc.dingtalk.com/docs/doc.htm?treeId=257&articleId=105735&docType=1
+ * </p>
  * Created by dustin on 2017/3/19.
  */
 public class HookConfig {
